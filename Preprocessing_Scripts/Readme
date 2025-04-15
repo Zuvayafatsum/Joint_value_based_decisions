@@ -1,1 +1,44 @@
-These MATLAB code snippets takes raw behavioral data as input and provides calculations of accuracy, random exploration and directed exploration metrics. 
+Preprocessing_Scripts – Joint Horizon Task Project
+==================================================
+
+This folder contains MATLAB scripts used to preprocess and analyze behavioral data from the Horizon Task in the Joint Horizon (JH) study.
+
+These scripts compute key behavioral metrics and generate variables used in statistical analyses reported in the project’s associated preprint.
+
+Contents:
+---------
+
+- `acc.m`  
+  → Computes **accuracy** across different conditions.
+
+- `directedexploration.m`  
+  → Calculates **directed exploration**, defined by whether participants choose options with higher uncertainty.
+
+- `randomexploration.m`  
+  → Calculates **random exploration**, typically inferred from deviation from value-maximizing choices.
+
+- `Impulsivity_and_Random_Exploration.m`  
+  → Analyzes the relationship between **impulsivity (short horizon)** and **random exploration** tendencies.
+
+- `indivdual_psychcurve_analysis_equal.m`  
+  → Fits and visualizes **psychometric functions** (for equal information trials) in the **individual condition**.
+
+- `psy_curves_equal.m`  
+  → Group-level psychometric curve analysis (equal information trials), used to assess choice probabilities.
+
+- `time_order_2way_anova_LONG.m`  
+  → 2-way ANOVA for **time-order effects** (first vs. second agent) in **long-horizon trials**.
+
+- `time_order_2way_anova_SHORT.m`  
+  → Same as above, but for **short-horizon trials**.
+
+How to Use:
+-----------
+
+These scripts assume that preprocessed `.mat` files from the `Preprocessed_Data` folder are already loaded. Most scripts can be executed as standalone files to generate summary figures or statistics. Ensure you are using MATLAB R2019b or later.
+
+Citation:
+---------
+
+If using or adapting these scripts for your research, please cite the accompanying preprint:
+> https://osf.io/preprints/psyarxiv/cp8uy/
