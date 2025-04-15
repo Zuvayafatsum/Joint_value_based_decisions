@@ -1,31 +1,35 @@
-Preprocessed Data for the Joint Horizon Task Project
-====================================================
+Preprocessed_Data – Joint Horizon Task Project
+==============================================
 
-This folder contains preprocessed behavioral data derived from the Joint Horizon Task (JH) project. The data has been structured to facilitate analysis and replication of the study's findings.
+This folder contains MATLAB `.mat` files with cleaned and condition-specific behavioral data from the Joint Horizon Task. These datasets are the result of aggregating raw session files into structured formats suitable for further statistical and modeling analyses.
 
 Contents:
 ---------
 
-- CSV or MATLAB files representing trial-by-trial data for each participant or session.
-- Each file includes variables such as:
-  - Participant ID
-  - Trial number
-  - Choice made
-  - Reward received
-  - Reaction time
-  - Condition labels (e.g., Individual or Collective)
-  - Other relevant task parameters
+1. `indivdata_equal.mat`  
+   → Contains behavioral data from participants in the **individual condition**, restricted to trials with **equal information**.
 
-Usage:
-------
+2. `indivdata_unequal.mat`  
+   → Contains behavioral data from the **individual condition**, but only for **unequal information** trials.
 
-These files are ready for statistical analysis using software like R, Python, or MATLAB. They serve as the basis for the analyses reported in our preprint: https://osf.io/preprints/psyarxiv/cp8uy/
+3. `jointdata_equal.mat`  
+   → Contains behavioral data from **collective sessions**, for **equal information** trials.
 
-Please refer to the accompanying scripts in the 'Preprocessing_Scripts' folder for details on how the raw data was transformed into this format.
+4. `jointdata_unequal.mat`  
+   → Behavioral data from **collective sessions**, for **unequal information** trials.
 
-License and Citation:
----------------------
+Structure:
+----------
 
-If you use this data in your research, please cite our preprint:
+Each `.mat` file contains a MATLAB table where rows represent individual trials. Common variables include:
+- `subID`: Subject identifier
+- `horizon`: Horizon condition (1 or 6)
+- `choice`: Chosen option
+- `reward`: Received reward
+- `infoType`: Information condition (equal/unequal)
+- `exploration_class`: Classification of whether the choice was exploratory
+- `condition`: Individual or collective session
 
-Your Name et al. (Year). Title of Your Paper. PsyArXiv. https://osf.io/preprints/psyarxiv/cp8uy/
+These files are designed to be directly usable in statistical scripts for computing choice behavior metrics (e.g., accuracy, directed/random exploration, time-order effects).
+
+Refer to the preprocessing scripts for how these files were generated.
