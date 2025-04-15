@@ -1,1 +1,64 @@
-These .rar files contains single subject, trial-by-trial outputs from the Horizon Task.
+README: Raw Data for the Joint Horizon Task Project
+===================================================
+
+This folder contains raw data files from the Joint Horizon Task (JH) project. Each file represents a session from one participant or collective group completing a computerized decision-making task based on the Horizon Task developed by Wilson et al. (2014). For full details of the methodology and experimental design, please refer to our preprint: https://osf.io/preprints/psyarxiv/cp8uy/
+
+---------------------------------------------------
+File Naming Convention
+---------------------------------------------------
+
+Each `.mat` file is named using the following format:
+
+    _JH_<subjectID>_<condition>_<sessionDate>_<timestamp>.mat
+
+- JH: Joint Horizon project
+- <subjectID>: Numeric ID of the participant or group
+- <condition>: 'I' for Individual sessions, 'C' for Collective sessions
+- <sessionDate> and <timestamp>: Date and time of the session (for internal tracking)
+
+---------------------------------------------------
+Data Contents
+---------------------------------------------------
+
+Each `.mat` file includes the following variables:
+
+- game: A structured array containing trial-by-trial data for up to 160 games per session. Each game includes:
+    - gameLength: Number of trials in the game (e.g., 5 or 10)
+    - nforced: Number of forced-choice trials
+    - forced: List of options shown in forced trials
+    - nfree: Number of free-choice trials
+    - mean: Underlying reward means for each option
+    - rewards: Actual reward values obtained
+    - a: Actions taken (choices made)
+    - r: Rewards received
+    - ts, tp, to: Timing variables (e.g., stimulus, presentation, outcome)
+    - RT: Reaction times
+
+- subjectID: Participant identifier
+- savename: Internal file label
+- ans: Participant responses (if applicable)
+
+---------------------------------------------------
+Task Description
+---------------------------------------------------
+
+Participants repeatedly chose between two slot machines (bandits) across short games (either 5 or 10 trials). Some trials were forced, where the choice was determined by the program, and others were free, where participants made their own decisions. The horizon manipulation (i.e., number of remaining trials) was used to assess exploration strategies.
+
+- In Individual sessions, participants played alone.
+- In Collective sessions, pairs of participants played while freely communicating.
+
+---------------------------------------------------
+Usage Notes
+---------------------------------------------------
+
+- These raw `.mat` files can be loaded using MATLAB or Python (e.g., with `scipy.io.loadmat()`).
+- To simplify analysis, we recommend converting the `game` structure into long-format trial-level tables.
+- See our preprocessing scripts (link-to-your-code-if-available) for examples on how to parse and analyze these files.
+
+---------------------------------------------------
+License and Citation
+---------------------------------------------------
+
+Please cite our preprint if you use these data in your own work:
+
+Your Name et al. (Year). Title of Your Paper. PsyArXiv. https://osf.io/preprints/psyarxiv/cp8uy/
