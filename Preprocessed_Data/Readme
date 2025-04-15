@@ -1,1 +1,31 @@
-These .csv and .mat files contain preprocessed metrics of accuracy, random and directed exploration of individuals and dyads.
+Preprocessed Data for the Joint Horizon Task Project
+====================================================
+
+This folder contains preprocessed behavioral data derived from the Joint Horizon Task (JH) project. The data has been structured to facilitate analysis and replication of the study's findings.
+
+Contents:
+---------
+
+- CSV or MATLAB files representing trial-by-trial data for each participant or session.
+- Each file includes variables such as:
+  - Participant ID
+  - Trial number
+  - Choice made
+  - Reward received
+  - Reaction time
+  - Condition labels (e.g., Individual or Collective)
+  - Other relevant task parameters
+
+Usage:
+------
+
+These files are ready for statistical analysis using software like R, Python, or MATLAB. They serve as the basis for the analyses reported in our preprint: https://osf.io/preprints/psyarxiv/cp8uy/
+
+Please refer to the accompanying scripts in the 'Preprocessing_Scripts' folder for details on how the raw data was transformed into this format.
+
+License and Citation:
+---------------------
+
+If you use this data in your research, please cite our preprint:
+
+Your Name et al. (Year). Title of Your Paper. PsyArXiv. https://osf.io/preprints/psyarxiv/cp8uy/
